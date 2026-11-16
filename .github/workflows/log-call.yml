@@ -1,0 +1,85 @@
+name: Log call
+
+# Turns a "New call" issue into a timestamped file in calls/.
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: journal-writes
+  cancel-in-progress: false
+
+jobs:
+  log:
+    if: startsWith(github.event.issue.title, '[Call]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pyyaml
+
+      - name: Convert issue to call file
+        id: convert
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_CREATED_AT: ${{ github.event.issue.created_at }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          python scripts/issue_to_call.py > result.json
+          cat result.json
+          echo "status=$(jq -r .status result.json)" >> "$GITHUB_OUTPUT"
+
+      - name: Commit call
+        if: steps.convert.outputs.status == 'logged'
+        env:
+          N: ${{ github.event.issue.number }}
+          TITLE: ${{ github.event.issue.title }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add calls/
+          git commit -m "Log call #$N: $TITLE"
+          git pull --rebase
+          git push
+
+      - name: Comment on the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          N: ${{ github.event.issue.number }}
+          ACTION: ${{ github.event.action }}
+        run: |
+          status=$(jq -r .status result.json)
+          if [ "$status" = "logged" ]; then
+            path=$(jq -r .path result.json)
+            on_time=$(jq -r .on_time result.json)
+            {
+              echo "📝 **Call logged** → [\`$path\`](../blob/main/$path)"
+              echo
+              if [ "$on_time" = "false" ]; then
+                echo "⚠️ This was logged **after** the release time, so it will be graded but won't count toward your scorecard."
+              else
+                echo "Locked in before the release. It'll be graded automatically after the close on the reaction date, and I'll post the results here."
+              fi
+              echo
+              echo "Now's the time to ask Claude to critique it. Add anything useful to **Review notes** later, not to the call itself."
+            } > comment.md
+            gh issue comment "$N" --body-file comment.md
+          elif [ "$status" = "invalid" ]; then
+            {
+              echo "⚠️ **Couldn't log this call yet.** Edit the issue to fix:"
+              echo
+              jq -r '.errors[] | "- " + .' result.json
+            } > comment.md
+            gh issue comment "$N" --body-file comment.md
+          elif [ "$status" = "exists" ] && [ "$ACTION" = "edited" ]; then
+            gh issue comment "$N" --body "ℹ️ This call was already logged. Edits after logging don't change it. That's what keeps the track record honest."
+          fi

@@ -1,0 +1,38 @@
+# Companies whose earnings show up in the weekly "week ahead" list.
+# Edit freely: add the names in sectors you follow.
+tickers:
+  # Mega-cap tech and AI
+  - AAPL
+  - MSFT
+  - NVDA
+  - AMZN
+  - GOOGL
+  - META
+  - TSLA
+  - AVGO
+  - ORCL
+  - AMD
+  - NFLX
+  # Banks and financials (react to rates)
+  - JPM
+  - GS
+  - MS
+  - BAC
+  - WFC
+  # Consumer (react to spending data)
+  - WMT
+  - COST
+  - HD
+  - LOW
+  - TGT
+  - NKE
+  - MCD
+  - CMG
+  # Energy and industrials
+  - XOM
+  - CVX
+  - CAT
+  - BA
+  # Health care
+  - UNH
+  - LLY

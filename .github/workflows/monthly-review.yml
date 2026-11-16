@@ -1,0 +1,33 @@
+name: Monthly review
+
+# On the 1st of each month: draft last month's review (stats + prompts) as an issue.
+on:
+  schedule:
+    - cron: "0 16 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Draft and post
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/monthly_review.py > review.md
+          gh label create monthly-review --color 5319E7 --description "Monthly write-up" --force
+          title=$(head -n 1 review.md | sed 's/^# //')
+          gh issue create --title "$title" --label monthly-review --body-file review.md

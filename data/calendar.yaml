@@ -1,0 +1,83 @@
+# Scheduled US macro events. All times are US Eastern.
+# Sources: BLS release calendars (bls.gov/schedule), BEA release schedule
+# (bea.gov/news/schedule), Federal Reserve FOMC calendar
+# (federalreserve.gov/monetarypolicy/fomccalendars.htm). Checked 2026-11-16.
+# Agencies sometimes reschedule releases, so confirm on the official calendar
+# if something looks off. Add new dates at the bottom as they are published.
+
+events:
+  # ---- November 2026 ----
+  - {date: 2026-11-17, time: "08:30", type: Other, event: "Retail sales, October (Census)"}
+  - {date: 2026-11-18, time: "14:00", type: FOMC,  event: "Fed minutes (October meeting)"}
+  - {date: 2026-11-25, time: "08:30", type: GDP,  event: "GDP, Q3 2026 (second estimate)"}
+  - {date: 2026-11-25, time: "08:30", type: PCE,  event: "PCE inflation / personal income & spending, October"}
+
+  # ---- December 2026 ----
+  - {date: 2026-12-01, time: "10:00", type: JOLTS, event: "Job openings (JOLTS), October"}
+  - {date: 2026-12-04, time: "08:30", type: Jobs,  event: "Jobs report, November"}
+  - {date: 2026-12-09, time: "14:00", type: FOMC,  event: "Fed rate decision + projections (press conference 14:30)"}
+  - {date: 2026-12-10, time: "08:30", type: CPI,   event: "CPI inflation, November"}
+  - {date: 2026-12-15, time: "08:30", type: PPI,   event: "PPI (producer prices), November"}
+  - {date: 2026-12-23, time: "08:30", type: GDP,   event: "GDP, Q3 2026 (third estimate)"}
+  - {date: 2026-12-23, time: "08:30", type: PCE,   event: "PCE inflation / personal income & spending, November"}
+  - {date: 2026-12-30, time: "14:00", type: FOMC,  event: "Fed minutes (December meeting)"}
+
+  # ---- January 2027 ----
+  - {date: 2027-01-05, time: "10:00", type: JOLTS, event: "Job openings (JOLTS), November"}
+  - {date: 2027-01-08, time: "08:30", type: Jobs,  event: "Jobs report, December"}
+  - {date: 2027-01-13, time: "08:30", type: CPI,   event: "CPI inflation, December"}
+  - {date: 2027-01-14, time: "08:30", type: PPI,   event: "PPI (producer prices), December"}
+  - {date: 2027-01-27, time: "14:00", type: FOMC,  event: "Fed rate decision"}
+  - {date: 2027-01-28, time: "08:30", type: GDP,   event: "GDP, Q4 2026 (advance estimate)"}
+  - {date: 2027-01-28, time: "08:30", type: PCE,   event: "PCE inflation / personal income & spending, December"}
+  - {date: 2027-01-29, time: "08:30", type: Other, event: "Employment Cost Index, Q4"}
+
+  # ---- February 2027 ----
+  - {date: 2027-02-02, time: "10:00", type: JOLTS, event: "Job openings (JOLTS), December"}
+  - {date: 2027-02-05, time: "08:30", type: Jobs,  event: "Jobs report, January"}
+  - {date: 2027-02-11, time: "08:30", type: CPI,   event: "CPI inflation, January"}
+  - {date: 2027-02-12, time: "08:30", type: PPI,   event: "PPI (producer prices), January"}
+  - {date: 2027-02-25, time: "08:30", type: GDP,   event: "GDP, Q4 2026 (second estimate)"}
+  - {date: 2027-02-25, time: "08:30", type: PCE,   event: "PCE inflation / personal income & spending, January"}
+
+  # ---- March 2027 ----
+  - {date: 2027-03-05, time: "08:30", type: Jobs,  event: "Jobs report, February"}
+  - {date: 2027-03-09, time: "10:00", type: JOLTS, event: "Job openings (JOLTS), January"}
+  - {date: 2027-03-10, time: "08:30", type: CPI,   event: "CPI inflation, February"}
+  - {date: 2027-03-12, time: "08:30", type: PPI,   event: "PPI (producer prices), February"}
+  - {date: 2027-03-17, time: "14:00", type: FOMC,  event: "Fed rate decision"}
+  - {date: 2027-03-30, time: "10:00", type: JOLTS, event: "Job openings (JOLTS), February"}
+  - {date: 2027-03-31, time: "08:30", type: GDP,   event: "GDP, Q4 2026 (third estimate)"}
+  - {date: 2027-03-31, time: "08:30", type: PCE,   event: "PCE inflation / personal income & spending, February"}
+
+  # ---- April 2027 ----
+  - {date: 2027-04-02, time: "08:30", type: Jobs,  event: "Jobs report, March"}
+  - {date: 2027-04-13, time: "08:30", type: CPI,   event: "CPI inflation, March"}
+  - {date: 2027-04-14, time: "08:30", type: PPI,   event: "PPI (producer prices), March"}
+  - {date: 2027-04-28, time: "14:00", type: FOMC,  event: "Fed rate decision"}
+  - {date: 2027-04-29, time: "08:30", type: GDP,   event: "GDP, Q1 2027 (advance estimate)"}
+  - {date: 2027-04-29, time: "08:30", type: PCE,   event: "PCE inflation / personal income & spending, March"}
+
+  # ---- May 2027 ----
+  - {date: 2027-05-04, time: "10:00", type: JOLTS, event: "Job openings (JOLTS), March"}
+  - {date: 2027-05-07, time: "08:30", type: Jobs,  event: "Jobs report, April"}
+  - {date: 2027-05-12, time: "08:30", type: CPI,   event: "CPI inflation, April"}
+  - {date: 2027-05-13, time: "08:30", type: PPI,   event: "PPI (producer prices), April"}
+  - {date: 2027-05-27, time: "08:30", type: GDP,   event: "GDP, Q1 2027 (second estimate)"}
+  - {date: 2027-05-27, time: "08:30", type: PCE,   event: "PCE inflation / personal income & spending, April"}
+
+  # ---- June 2027 ----
+  - {date: 2027-06-02, time: "10:00", type: JOLTS, event: "Job openings (JOLTS), April"}
+  - {date: 2027-06-04, time: "08:30", type: Jobs,  event: "Jobs report, May"}
+  - {date: 2027-06-09, time: "14:00", type: FOMC,  event: "Fed rate decision"}
+  - {date: 2027-06-10, time: "08:30", type: CPI,   event: "CPI inflation, May"}
+  - {date: 2027-06-11, time: "08:30", type: PPI,   event: "PPI (producer prices), May"}
+  - {date: 2027-06-25, time: "08:30", type: GDP,   event: "GDP, Q1 2027 (third estimate)"}
+  - {date: 2027-06-25, time: "08:30", type: PCE,   event: "PCE inflation / personal income & spending, May"}
+  - {date: 2027-06-29, time: "10:00", type: JOLTS, event: "Job openings (JOLTS), May"}
+
+  # ---- July 2027 (partial) ----
+  - {date: 2027-07-02, time: "08:30", type: Jobs,  event: "Jobs report, June"}
+  - {date: 2027-07-28, time: "14:00", type: FOMC,  event: "Fed rate decision"}
+  - {date: 2027-07-29, time: "08:30", type: GDP,   event: "GDP, Q2 2027 (advance estimate)"}
+  - {date: 2027-07-29, time: "08:30", type: PCE,   event: "PCE inflation / personal income & spending, June"}

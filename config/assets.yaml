@@ -1,0 +1,41 @@
+# What each call is graded against, and how big a move counts as
+# flat / small / medium / large. Thresholds are the absolute move that
+# starts each size: [small, medium, large]. Anything below "small" is flat.
+#
+# Moves are measured from the previous trading day's close to the close on
+# the reaction date. Yields are in basis points (bp); everything else in %.
+
+core:
+  spx:    {label: "S&P 500",           source: yahoo, ticker: SPY,      unit: pct, thresholds: [0.20, 0.60, 1.20]}
+  us2y:   {label: "2-year yield",      source: fred,  ticker: DGS2,     unit: bp,  thresholds: [2, 5, 10]}
+  us10y:  {label: "10-year yield",     source: fred,  ticker: DGS10,    unit: bp,  thresholds: [2, 5, 10]}
+  dollar: {label: "US dollar (DXY)",   source: yahoo, ticker: DX-Y.NYB, unit: pct, thresholds: [0.15, 0.40, 0.80]}
+  gold:   {label: "Gold",              source: yahoo, ticker: GLD,      unit: pct, thresholds: [0.30, 0.80, 1.50]}
+  oil:    {label: "Oil",               source: yahoo, ticker: USO,      unit: pct, thresholds: [0.50, 1.50, 3.00]}
+
+# Sector calls are graded RELATIVE to the S&P 500 (sector return minus
+# S&P return), because the useful skill is knowing which parts of the market
+# win or lose from an event, not just repeating the market call.
+sectors:
+  benchmark: SPY
+  thresholds: [0.20, 0.60, 1.20]
+  tickers:
+    XLK:  Technology
+    SMH:  Semiconductors
+    XLF:  Financials (big banks)
+    KRE:  Regional banks
+    XLE:  Energy
+    XLV:  Health care
+    XLY:  Consumer discretionary
+    XLP:  Consumer staples
+    XLI:  Industrials
+    XLU:  Utilities
+    XLRE: Real estate
+    XHB:  Homebuilders
+    XLB:  Materials
+    XLC:  Communication services
+    IWM:  Small caps (Russell 2000)
+
+# Single-stock calls (mainly earnings) are graded on the stock's own move.
+stock:
+  thresholds: [1.0, 3.0, 7.0]

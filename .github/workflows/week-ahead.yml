@@ -1,0 +1,54 @@
+name: Week ahead
+
+# Every Sunday morning: post next week's key releases and earnings as an issue
+# (GitHub emails you), and save them to WEEK_AHEAD.md.
+on:
+  schedule:
+    - cron: "0 16 * * 0"   # Sunday 8am Pacific (9am in summer)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: journal-writes
+  cancel-in-progress: false
+
+jobs:
+  week-ahead:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Build week ahead
+        run: python scripts/week_ahead.py
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add WEEK_AHEAD.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Update week ahead"
+            git pull --rebase
+            git push
+          fi
+
+      - name: Post as issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create week-ahead --color 0E8A16 --description "Weekly calendar" --force
+          for n in $(gh issue list --label week-ahead --state open --json number -q '.[].number'); do
+            gh issue close "$n" --reason completed
+          done
+          title=$(head -n 1 WEEK_AHEAD.md | sed 's/^# //')
+          gh issue create --title "$title" --label week-ahead --body-file WEEK_AHEAD.md

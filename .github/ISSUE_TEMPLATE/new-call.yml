@@ -1,0 +1,237 @@
+name: New call
+description: Log a market call before the event
+title: '[Call] '
+body:
+- type: markdown
+  attributes:
+    value: '**Make your call before the release, and before you ask Claude.** The time you open this issue is your proof.
+
+
+      Moves are graded from the previous close to the close on the reaction date. Sizes: S&P 500 small ≥0.2%, medium ≥0.6%, large ≥1.2%; yields small ≥2bp, medium ≥5bp, large ≥10bp. Full table in the README.'
+- type: input
+  id: event
+  attributes:
+    label: Event
+    placeholder: November CPI
+  validations:
+    required: true
+- type: dropdown
+  id: event_type
+  attributes:
+    label: Event type
+    options:
+    - CPI
+    - Jobs
+    - FOMC
+    - PCE
+    - GDP
+    - PPI
+    - JOLTS
+    - Fed speaker
+    - Earnings
+    - Geopolitics / news
+    - Other
+  validations:
+    required: true
+- type: input
+  id: reaction_date
+  attributes:
+    label: Reaction date
+    description: Trading day the market reacts (YYYY-MM-DD). Data before 9:30 ET = same day; earnings after the close = next trading day.
+    placeholder: '2026-12-10'
+  validations:
+    required: true
+- type: input
+  id: release_time
+  attributes:
+    label: Release time (ET)
+    description: Optional, 24-hour. Calls opened after this time are marked late.
+    placeholder: 08:30
+  validations:
+    required: false
+- type: input
+  id: consensus
+  attributes:
+    label: Consensus expectation
+    placeholder: Core CPI +0.3% m/m, headline +0.2%
+  validations:
+    required: false
+- type: dropdown
+  id: data_view
+  attributes:
+    label: Your view on the data
+    options:
+    - Hotter / stronger than consensus
+    - In line
+    - Cooler / weaker than consensus
+    - Not a data release
+  validations:
+    required: false
+- type: markdown
+  attributes:
+    value: '### Your calls
+
+      Leave anything you have no view on as **No call**.'
+- type: dropdown
+  id: spx
+  attributes:
+    label: S&P 500
+    options: &id001
+    - No call
+    - Up - large
+    - Up - medium
+    - Up - small
+    - Flat
+    - Down - small
+    - Down - medium
+    - Down - large
+    default: 0
+  validations:
+    required: false
+- type: dropdown
+  id: us2y
+  attributes:
+    label: 2-year yield
+    options: *id001
+    default: 0
+  validations:
+    required: false
+- type: dropdown
+  id: us10y
+  attributes:
+    label: 10-year yield
+    options: *id001
+    default: 0
+  validations:
+    required: false
+- type: dropdown
+  id: dollar
+  attributes:
+    label: US dollar (DXY)
+    options: *id001
+    default: 0
+  validations:
+    required: false
+- type: dropdown
+  id: gold
+  attributes:
+    label: Gold
+    options: *id001
+    default: 0
+  validations:
+    required: false
+- type: dropdown
+  id: oil
+  attributes:
+    label: Oil
+    options: *id001
+    default: 0
+  validations:
+    required: false
+- type: dropdown
+  id: sector1
+  attributes:
+    label: Sector 1
+    options: &id002
+    - None
+    - XLK - Technology
+    - SMH - Semiconductors
+    - XLF - Financials (big banks)
+    - KRE - Regional banks
+    - XLE - Energy
+    - XLV - Health care
+    - XLY - Consumer discretionary
+    - XLP - Consumer staples
+    - XLI - Industrials
+    - XLU - Utilities
+    - XLRE - Real estate
+    - XHB - Homebuilders
+    - XLB - Materials
+    - XLC - Communication services
+    - IWM - Small caps (Russell 2000)
+    default: 0
+  validations:
+    required: false
+- type: dropdown
+  id: sector1_call
+  attributes:
+    label: Sector 1 vs the S&P 500
+    options: &id003
+    - No call
+    - Outperform - large
+    - Outperform - medium
+    - Outperform - small
+    - In line
+    - Underperform - small
+    - Underperform - medium
+    - Underperform - large
+    description: Graded on the sector's move minus the S&P 500's move.
+    default: 0
+  validations:
+    required: false
+- type: dropdown
+  id: sector2
+  attributes:
+    label: Sector 2
+    options: *id002
+    default: 0
+  validations:
+    required: false
+- type: dropdown
+  id: sector2_call
+  attributes:
+    label: Sector 2 vs the S&P 500
+    options: *id003
+    default: 0
+  validations:
+    required: false
+- type: input
+  id: stock
+  attributes:
+    label: Single stock (ticker)
+    description: Mainly for earnings calls.
+    placeholder: NVDA
+  validations:
+    required: false
+- type: dropdown
+  id: stock_call
+  attributes:
+    label: Single stock call
+    options: *id001
+    description: 'Stock sizes: small ≥1%, medium ≥3%, large ≥7%.'
+    default: 0
+  validations:
+    required: false
+- type: dropdown
+  id: confidence
+  attributes:
+    label: Confidence
+    options:
+    - 1 - coin flip
+    - 2 - slight lean
+    - 3 - fairly confident
+    - 4 - confident
+    - 5 - very confident
+  validations:
+    required: true
+- type: textarea
+  id: reasoning
+  attributes:
+    label: Reasoning
+    description: 2–3 lines on WHY. What's priced in? What would surprise the market?
+  validations:
+    required: true
+- type: textarea
+  id: scenarios
+  attributes:
+    label: If it goes the other way
+    description: 'Optional: what you''d expect if the data surprises the other way.'
+  validations:
+    required: false
+- type: input
+  id: source
+  attributes:
+    label: Source link
+    description: 'Optional: the WSJ article (link only, don''t paste text).'
+  validations:
+    required: false
