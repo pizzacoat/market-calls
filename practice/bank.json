@@ -1,0 +1,2443 @@
+{
+ "generated": "2026-11-17",
+ "events": [
+  {
+   "id": "cpi-2022-09",
+   "category": "Inflation",
+   "title": "August 2022 CPI",
+   "brief": "Tuesday 8:30 ET. Stocks had rallied for four straight days on hopes that inflation had peaked, with gasoline prices falling all summer. Economists expected headline CPI to slow to 8.1% year over year and to slip 0.1% on the month. The report showed 8.3% year over year and a 0.1% monthly rise. Core inflation, which strips out food and energy, rose 0.6% on the month, double the expected 0.3%, taking it to 6.3% year over year.",
+   "focus": "spx",
+   "sectors": [
+    "XLK",
+    "XLE",
+    "XLU",
+    "XLP"
+   ],
+   "explanation": "The market had priced in a peak in inflation and the rally rested on that hope. A hot core number (the part the Fed watches most) meant the Fed would keep hiking hard, so 2-year yields jumped and the dollar rose. Long-duration growth stocks are hurt most by higher rates, so tech led the fall. The size of the drop reflects positioning: when everyone leans one way before the data, a surprise the other way hits hardest.",
+   "lesson": "The surprise versus what is priced in matters more than the number itself.",
+   "date": "2022-09-13",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -4.35,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -5.48,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": -3.91,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": 19.0,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": 6.0,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": 1.38,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -1.3,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -0.5,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 14.24,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -5.31,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": -2.52,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": -2.66,
+     "unit": "pct"
+    },
+    "XLP": {
+     "label": "Consumer staples",
+     "move": -3.34,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "cpi-2022-11",
+   "category": "Inflation",
+   "title": "October 2022 CPI",
+   "brief": "Thursday 8:30 ET. The Fed had just raised rates by 0.75 point for the fourth meeting in a row, and stocks were near their lows for the year. Economists expected headline CPI of 7.9% year over year and core CPI of 6.5%. The report showed headline at 7.7% and core at 6.3%, with core rising 0.3% on the month against an expected 0.5%.",
+   "focus": "spx",
+   "sectors": [
+    "XLK",
+    "XLRE",
+    "XLE",
+    "XLP"
+   ],
+   "explanation": "This was the first clear sign that inflation had turned. Markets moved fast to price a slower pace of Fed hikes, so yields and the dollar fell sharply. Assets most sensitive to rates, such as tech, real estate and other long-duration growth stocks, jumped the most. Defensive sectors such as staples lagged because investors moved into risk.",
+   "lesson": "When the market is positioned for bad news, a modest good surprise can spark a huge rally.",
+   "date": "2022-11-10",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": 5.5,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": 7.38,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": 6.16,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": -29.7,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -32.2,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": -2.12,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": 3.04,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": 0.8,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": -9.81,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": 8.22,
+     "unit": "pct"
+    },
+    "XLRE": {
+     "label": "Real estate",
+     "move": 7.67,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": 2.23,
+     "unit": "pct"
+    },
+    "XLP": {
+     "label": "Consumer staples",
+     "move": 2.35,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "cpi-2024-04",
+   "category": "Inflation",
+   "title": "March 2024 CPI",
+   "brief": "Wednesday 8:30 ET. Markets had priced roughly two to three Fed rate cuts in 2024, with the first expected by June. Economists expected headline CPI of 3.4% year over year and core CPI up 0.3% on the month. The report showed headline at 3.5% and core up 0.4%, the third hot monthly core reading in a row.",
+   "focus": "spx",
+   "sectors": [
+    "IWM",
+    "XLRE",
+    "XLK",
+    "XLE"
+   ],
+   "explanation": "A third hot month made it hard to argue the earlier readings were noise, so traders pushed back the expected first rate cut. Yields rose sharply across the curve and the dollar strengthened. Small caps and real estate, which depend most on cheaper borrowing, fell hardest.",
+   "lesson": "A pattern of surprises moves markets more than a single one, because it changes the story.",
+   "date": "2024-04-10",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -1.0,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -0.87,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": -2.64,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": 21.8,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": 19.4,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": 1.06,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -0.95,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": 1.16,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 5.47,
+     "unit": "pct"
+    },
+    "XLRE": {
+     "label": "Real estate",
+     "move": -4.11,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -1.23,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": 0.31,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "cpi-2024-05",
+   "category": "Inflation",
+   "title": "April 2024 CPI",
+   "brief": "Wednesday 8:30 ET. After three hot inflation reports in a row, investors worried rate cuts would be pushed into 2025. Economists expected core CPI to rise 0.3% on the month after 0.4% in each of the prior three months. Core rose 0.3%, in line, and headline CPI was 3.4% year over year, also in line. Retail sales, released at the same time, were flat for April, weaker than the expected 0.4% gain.",
+   "focus": "spx",
+   "sectors": [
+    "XLK",
+    "XLRE",
+    "XLE",
+    "XLP"
+   ],
+   "explanation": "An in-line number counted as relief after three hot ones, and soft retail sales added to hopes the economy was cooling just enough. Yields fell, and stocks rose to record highs. Rate-sensitive groups did well.",
+   "lesson": "Whether a print is good or bad depends on the previous trend and the fears going in, not only the consensus.",
+   "date": "2024-05-15",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": 1.24,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": 1.56,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": 1.25,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": -7.4,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -8.9,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": -0.63,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": 1.28,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": 0.89,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": -7.23,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": 2.25,
+     "unit": "pct"
+    },
+    "XLRE": {
+     "label": "Real estate",
+     "move": 1.7,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": 0.22,
+     "unit": "pct"
+    },
+    "XLP": {
+     "label": "Consumer staples",
+     "move": 0.06,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "cpi-2024-07",
+   "category": "Inflation",
+   "title": "June 2024 CPI",
+   "brief": "Thursday 8:30 ET. The S&P 500 had risen for seven straight sessions, led by a handful of mega-cap tech stocks, while small caps lagged badly. Economists expected headline CPI to rise 0.1% on the month. It fell 0.1%, the first monthly decline since 2020, and core rose just 0.1% against an expected 0.2%.",
+   "focus": "spx",
+   "sectors": [
+    "IWM",
+    "XLK",
+    "XLRE",
+    "SMH"
+   ],
+   "explanation": "Cooler inflation raised odds of a September rate cut, but money did not flow into the winners. Investors sold crowded mega-cap tech and bought what had lagged and would gain most from lower rates: small caps, regional banks and real estate. The S&P 500, heavy in tech, fell even as most stocks rose. This was a rotation, not a sell-off.",
+   "lesson": "Good news can still sink an index when it triggers a rotation out of the crowded winners.",
+   "date": "2024-07-11",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -0.86,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -2.19,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": 3.59,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": -12.3,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -8.7,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": -0.58,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": 1.77,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": 0.57,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 0.54,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -2.5,
+     "unit": "pct"
+    },
+    "XLRE": {
+     "label": "Real estate",
+     "move": 2.66,
+     "unit": "pct"
+    },
+    "SMH": {
+     "label": "Semiconductors",
+     "move": -3.64,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "jobs-2023-02",
+   "category": "Jobs",
+   "title": "January 2023 jobs report",
+   "brief": "Friday 8:30 ET. Stocks had started 2023 strongly on hopes the Fed was nearly done hiking; two days earlier Powell had said \"disinflation\" had started. Economists expected about 190,000 jobs added in January. The report showed 517,000, and the unemployment rate fell to 3.4%, the lowest since 1969.",
+   "focus": "spx",
+   "sectors": [
+    "XLK",
+    "XLF",
+    "XLE",
+    "XLU"
+   ],
+   "explanation": "A very strong labor market meant wage pressure and more Fed hikes, undercutting the \"Fed is almost done\" rally. Yields and the dollar rose. Stocks fell, though less dramatically than after a hot CPI, because strong jobs also mean a healthier economy.",
+   "lesson": "In an inflation scare, strong economic data is bad news for stocks because it means more Fed tightening.",
+   "date": "2023-02-03",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -1.06,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -1.78,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": -0.67,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": 19.9,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": 13.6,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": 1.15,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -2.5,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -3.26,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": -2.14,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -0.83,
+     "unit": "pct"
+    },
+    "XLF": {
+     "label": "Financials",
+     "move": -0.19,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": -0.22,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": -2.09,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "jobs-2024-08",
+   "category": "Jobs",
+   "title": "July 2024 jobs report",
+   "brief": "Friday 8:30 ET. Two days earlier the Fed had held rates but hinted at a September cut. Earnings from some big tech firms had disappointed. Economists expected about 175,000 jobs. The report showed 114,000, and unemployment rose to 4.3%, triggering the \"Sahm rule\", a recession signal based on the rise in unemployment.",
+   "focus": "spx",
+   "sectors": [
+    "XLK",
+    "IWM",
+    "XLU",
+    "XLP"
+   ],
+   "explanation": "The mood flipped from \"rates will fall\" to \"the economy might be breaking\". Yields fell sharply as traders bet on bigger cuts, but stocks fell too, because recession fears hurt earnings. Defensive sectors such as utilities and staples held up best, and small caps and tech fell the most.",
+   "lesson": "Weak data is good for stocks only while it means rate cuts without a recession. Past a point it turns into recession fear.",
+   "date": "2024-08-02",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -1.86,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -2.37,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": -3.54,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": -28.7,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -18.4,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": -1.16,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -0.19,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -3.8,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 25.82,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -2.81,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": 0.16,
+     "unit": "pct"
+    },
+    "XLP": {
+     "label": "Consumer staples",
+     "move": 0.88,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "jobs-2024-10",
+   "category": "Jobs",
+   "title": "September 2024 jobs report",
+   "brief": "Friday 8:30 ET. The Fed had cut rates by 0.5 point in September and markets priced more big cuts. Economists expected about 150,000 jobs. The report showed 254,000, unemployment fell to 4.1%, and the two prior months were revised up.",
+   "focus": "spx",
+   "sectors": [
+    "XLF",
+    "XLU",
+    "XLRE",
+    "XLK"
+   ],
+   "explanation": "Unlike early 2023, inflation was no longer the main fear, so strong jobs read as \"no recession\", which is good for stocks. Traders dropped bets on more 0.5-point cuts, so the 2-year yield jumped. Stocks rose, led by cyclical sectors such as banks, while rate-sensitive sectors such as utilities and real estate lagged.",
+   "lesson": "The same data point means different things depending on whether the market fears inflation or recession.",
+   "date": "2024-10-04",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": 0.91,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": 1.19,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": 1.4,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": 21.7,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": 13.1,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": 0.52,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -0.2,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": 0.82,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": -6.25,
+     "unit": "pct"
+    },
+    "XLF": {
+     "label": "Financials",
+     "move": 1.69,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": -0.16,
+     "unit": "pct"
+    },
+    "XLRE": {
+     "label": "Real estate",
+     "move": -0.66,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": 1.11,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "jobs-2025-08",
+   "category": "Jobs",
+   "title": "July 2025 jobs report",
+   "brief": "Friday 8:30 ET. The Fed had held rates two days earlier, and new US tariffs on many trading partners were taking effect. Economists expected about 100,000 jobs. The report showed 73,000, and the previous two months were revised down by a combined 258,000, showing hiring had been far weaker than reported.",
+   "focus": "spx",
+   "sectors": [
+    "XLK",
+    "XLU",
+    "XLP",
+    "XLY"
+   ],
+   "explanation": "The huge downward revisions changed the picture of the economy, not just one month. Traders priced a September rate cut almost fully, so the 2-year yield fell sharply and the dollar weakened. Stocks fell on growth fears, with defensive sectors holding up better than consumer discretionary and tech.",
+   "lesson": "Revisions can matter more than the headline number. Always check them.",
+   "date": "2025-08-01",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -1.64,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -1.97,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": -2.04,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": -22.5,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -14.0,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": -1.34,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": 2.03,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -2.68,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 21.89,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -2.16,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": 0.15,
+     "unit": "pct"
+    },
+    "XLP": {
+     "label": "Consumer staples",
+     "move": 0.48,
+     "unit": "pct"
+    },
+    "XLY": {
+     "label": "Consumer discretionary",
+     "move": -2.41,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "fed-2022-06",
+   "category": "Fed",
+   "title": "June 2022 Fed decision",
+   "brief": "Wednesday 2:00 ET. Days earlier a hot CPI report had pushed the S&P 500 into a bear market. On Monday the WSJ reported the Fed was likely to raise rates by 0.75 point instead of the 0.5 point it had signaled, and markets quickly priced that in. The Fed then raised rates by 0.75 point, its biggest hike since 1994. Powell said such large moves would not be common.",
+   "focus": "spx",
+   "sectors": [
+    "XLK",
+    "XLE",
+    "XLF",
+    "XLU"
+   ],
+   "explanation": "The big hike was already priced in after the WSJ report, so the decision itself was not a shock. Powell's comment that 0.75-point moves would be uncommon read as less hawkish than feared, so stocks rallied from oversold levels. This is \"buy the rumor, sell the news\" in reverse: the bad news was sold in advance.",
+   "lesson": "Once news is fully priced in, the reaction comes from the tone and the details.",
+   "date": "2022-06-15",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": 1.43,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": 2.5,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": 1.46,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": -13.2,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -8.8,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": -0.34,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": 1.31,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -1.72,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": -9.39,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": 2.11,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": -2.21,
+     "unit": "pct"
+    },
+    "XLF": {
+     "label": "Financials",
+     "move": 1.12,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": 0.65,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "fed-2022-jh",
+   "category": "Fed",
+   "title": "Powell at Jackson Hole, August 2022",
+   "brief": "Friday 10:00 ET. Stocks had rallied about 15% from their June lows, partly on hopes the Fed would soon slow its hikes and cut rates in 2023. Powell gave a short, blunt speech: the Fed would keep raising rates, keep them high \"for some time\", and accept \"some pain\" for households and businesses to beat inflation.",
+   "focus": "spx",
+   "sectors": [
+    "XLK",
+    "XLE",
+    "XLU",
+    "XLP"
+   ],
+   "explanation": "Powell deliberately pushed back on the market's hopes for a pivot. The speech removed the basis of the summer rally, so stocks fell sharply, led by tech and other growth stocks. Defensive sectors fell less.",
+   "lesson": "When the Fed explicitly pushes back on what markets are pricing, believe it.",
+   "date": "2022-08-26",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -3.38,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -4.1,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": -3.29,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": 2.1,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": 0.9,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": 0.3,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -1.22,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -0.85,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 17.36,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -4.27,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": -1.17,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": -1.53,
+     "unit": "pct"
+    },
+    "XLP": {
+     "label": "Consumer staples",
+     "move": -2.48,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "fed-2023-12",
+   "category": "Fed",
+   "title": "December 2023 Fed decision",
+   "brief": "Wednesday 2:00 ET. Inflation had cooled through the autumn. The Fed held rates at 5.25\u20135.50%, as expected. Its new projections showed officials expecting three rate cuts in 2024, more than in September, and Powell said cuts were now being discussed.",
+   "focus": "spx",
+   "sectors": [
+    "IWM",
+    "XLRE",
+    "XLE",
+    "XLP"
+   ],
+   "explanation": "The Fed itself signaled a pivot, much earlier than many expected. Yields dropped sharply, the 10-year falling toward 4%, and the dollar weakened. Rate-sensitive assets such as small caps and real estate surged, and the Dow closed at a record.",
+   "lesson": "A shift in the Fed's projections can matter more than the rate decision itself.",
+   "date": "2023-12-13",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": 1.38,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": 1.27,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": 3.39,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": -24.5,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -17.3,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": -0.96,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": 2.26,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": 1.68,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 0.99,
+     "unit": "pct"
+    },
+    "XLRE": {
+     "label": "Real estate",
+     "move": 3.63,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": 1.39,
+     "unit": "pct"
+    },
+    "XLP": {
+     "label": "Consumer staples",
+     "move": 1.82,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "fed-2024-09",
+   "category": "Fed",
+   "title": "September 2024 Fed decision",
+   "brief": "Wednesday 2:00 ET. This was the Fed's first meeting with a cut expected since 2020, and the debate was whether it would cut by 0.25 or 0.5 point. Markets had moved toward 0.5 in the days before. The Fed cut by 0.5 point. Powell said it was not a sign of worry about the economy and that 0.5 should not be seen as the new pace.",
+   "focus": "spx",
+   "sectors": [
+    "IWM",
+    "XLF",
+    "XLK",
+    "XLU"
+   ],
+   "explanation": "The large cut was largely priced in, and stocks had rallied into the meeting. With no new surprise and some pushback on the pace of future cuts, the reaction was a small dip, a classic \"sell the news\". Longer-term yields actually rose.",
+   "lesson": "The event everyone expects usually has a small reaction, often the opposite of the \"obvious\" one.",
+   "date": "2024-09-18",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -0.3,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -0.43,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": 0.02,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": 1.7,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": 4.3,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": -0.29,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -0.77,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -1.48,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 3.52,
+     "unit": "pct"
+    },
+    "XLF": {
+     "label": "Financials",
+     "move": -0.31,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -0.91,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": -0.76,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "fed-2024-12",
+   "category": "Fed",
+   "title": "December 2024 Fed decision",
+   "brief": "Wednesday 2:00 ET. Stocks were near record highs. The Fed was expected to cut rates by 0.25 point, and it did. But its new projections showed only two cuts expected in 2025, down from four in September, and higher inflation forecasts. Powell said the Fed would be more cautious about further cuts.",
+   "focus": "spx",
+   "sectors": [
+    "IWM",
+    "XLRE",
+    "XLK",
+    "XLU"
+   ],
+   "explanation": "The cut was expected; the projections were the hawkish surprise. Yields and the dollar rose and volatility spiked. Small caps and real estate fell the most because they rely most on cheap credit. Stocks priced for perfection had little cushion.",
+   "lesson": "A \"hawkish cut\" can hit stocks harder than a hike when the market was priced for more easing.",
+   "date": "2024-12-18",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -2.98,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -3.61,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": -4.43,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": 8.7,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": 10.9,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": 1.0,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -1.92,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -0.49,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 74.04,
+     "unit": "pct"
+    },
+    "XLRE": {
+     "label": "Real estate",
+     "move": -3.91,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -3.23,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": -2.36,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "earn-nflx-2022-04",
+   "category": "Earnings",
+   "title": "Netflix Q1 2022 earnings",
+   "brief": "Reported after the close on Tuesday April 19. Netflix had forecast adding 2.5 million subscribers in the quarter. Instead it lost 200,000, its first decline in more than a decade, partly from leaving Russia. It forecast losing another 2 million in the next quarter, said about 100 million households shared passwords, and said it would consider an ad-supported plan.",
+   "focus": "NFLX",
+   "stock": "NFLX",
+   "sectors": [
+    "XLC",
+    "XLK",
+    "XLP",
+    "XLE"
+   ],
+   "explanation": "Netflix was valued as a growth story built on subscriber growth. A loss of subscribers, plus a forecast of more losses, broke that story, so investors re-valued it as a mature business. The stock collapsed and dragged other streaming and media names down with it.",
+   "lesson": "When the core growth story breaks, a stock re-rates, and the drop can be far bigger than the miss.",
+   "date": "2022-04-20",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -0.07,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -1.46,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": 0.38,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": -0.1,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -7.3,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": -0.56,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": 0.49,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": 0.49,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": -4.91,
+     "unit": "pct"
+    },
+    "XLC": {
+     "label": "Communication services",
+     "move": -4.34,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -0.09,
+     "unit": "pct"
+    },
+    "XLP": {
+     "label": "Consumer staples",
+     "move": 1.5,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": 0.39,
+     "unit": "pct"
+    },
+    "NFLX": {
+     "label": "NFLX",
+     "move": -35.12,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "earn-tgt-2022-05",
+   "category": "Earnings",
+   "title": "Target Q1 2022 earnings",
+   "brief": "Reported before the open on Wednesday. A day earlier Walmart had cut its profit forecast because of higher fuel, freight and wage costs. Target's sales rose, but profit roughly halved and badly missed forecasts. Target said costs had surged, shoppers were shifting from TVs and appliances to essentials, and it was stuck with too much inventory.",
+   "focus": "TGT",
+   "stock": "TGT",
+   "sectors": [
+    "XLY",
+    "XLP",
+    "XLK",
+    "XLE"
+   ],
+   "explanation": "Target and Walmart together showed inflation hitting retailers from both sides: higher costs and shoppers trading down. That raised fears for corporate profit margins across the economy, not just at Target. Target fell more than 20%, and the selling spread to retail and the whole market, with consumer stocks hit hardest.",
+   "lesson": "One company's results can move the market when they reveal something about the whole economy.",
+   "date": "2022-05-18",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -4.03,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -4.91,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": -3.5,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": -3.3,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -8.2,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": 0.44,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": 0.05,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -2.24,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 18.62,
+     "unit": "pct"
+    },
+    "XLY": {
+     "label": "Consumer discretionary",
+     "move": -6.54,
+     "unit": "pct"
+    },
+    "XLP": {
+     "label": "Consumer staples",
+     "move": -6.43,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -4.58,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": -2.56,
+     "unit": "pct"
+    },
+    "TGT": {
+     "label": "TGT",
+     "move": -24.93,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "earn-meta-2022-10",
+   "category": "Earnings",
+   "title": "Meta Q3 2022 earnings",
+   "brief": "Reported after the close on Wednesday October 26. Revenue fell for the second quarter in a row as the ad market weakened. Profit fell by about half. Meta said spending would rise sharply in 2023, and Reality Labs, its metaverse unit, had lost $3.7 billion in the quarter, with bigger losses to come. Alphabet and Microsoft had also reported disappointing results that week.",
+   "focus": "META",
+   "stock": "META",
+   "sectors": [
+    "XLC",
+    "XLK",
+    "XLE",
+    "XLP"
+   ],
+   "explanation": "Investors were already worried about weak ads; what broke confidence was management choosing to spend far more on an unproven bet while profits fell. The stock dropped about a quarter in one day to its lowest level since 2016.",
+   "lesson": "Investors punish spending they don't believe in, especially when the core business is shrinking.",
+   "date": "2022-10-27",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -0.53,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -1.82,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": 0.02,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": -8.8,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -7.8,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": 0.81,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -0.15,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": 0.89,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 0.4,
+     "unit": "pct"
+    },
+    "XLC": {
+     "label": "Communication services",
+     "move": -4.74,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -1.14,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": 0.36,
+     "unit": "pct"
+    },
+    "XLP": {
+     "label": "Consumer staples",
+     "move": 0.08,
+     "unit": "pct"
+    },
+    "META": {
+     "label": "META",
+     "move": -24.56,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "earn-meta-2023-02",
+   "category": "Earnings",
+   "title": "Meta Q4 2022 earnings",
+   "brief": "Reported after the close on Wednesday February 1. After a terrible 2022, Meta's revenue fell 4% but beat estimates, and its revenue forecast for the next quarter was above expectations. Zuckerberg called 2023 the \"year of efficiency\", Meta cut its 2023 spending forecast, and it announced a $40 billion share buyback.",
+   "focus": "META",
+   "stock": "META",
+   "sectors": [
+    "XLC",
+    "XLK",
+    "XLE",
+    "XLU"
+   ],
+   "explanation": "The stock had been priced for disaster. Cost discipline and a buyback were exactly what investors had demanded in October, so the stock jumped more than 20%. It's the mirror image of the October 2022 drop.",
+   "lesson": "Low expectations plus a change in management behavior can produce a huge upside move.",
+   "date": "2023-02-02",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": 1.46,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": 3.59,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": 1.97,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": -2.3,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -0.1,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": 0.52,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -2.08,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -1.17,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 4.81,
+     "unit": "pct"
+    },
+    "XLC": {
+     "label": "Communication services",
+     "move": 6.57,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": 2.73,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": -2.28,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": 0.22,
+     "unit": "pct"
+    },
+    "META": {
+     "label": "META",
+     "move": 23.28,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "earn-nvda-2023-05",
+   "category": "Earnings",
+   "title": "Nvidia Q1 FY2024 earnings",
+   "brief": "Reported after the close on Wednesday May 24. ChatGPT had launched six months earlier and AI was the hot theme, but Nvidia's overall revenue had been falling as gaming chip sales slumped. Analysts expected next-quarter revenue guidance of about $7.2 billion. Nvidia guided to about $11 billion, citing surging demand for its data center chips used to train AI models.",
+   "focus": "NVDA",
+   "stock": "NVDA",
+   "sectors": [
+    "SMH",
+    "XLK",
+    "XLE",
+    "XLP"
+   ],
+   "explanation": "This was one of the largest guidance beats in history for a company that size, and it showed AI demand was real and huge. Nvidia jumped about a quarter, and other AI-linked chip stocks rallied with it. It set off the 2023 AI trade.",
+   "lesson": "Guidance matters more than last quarter's results; a giant guidance beat can reset a whole sector.",
+   "date": "2023-05-25",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": 0.87,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": 2.43,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": -0.78,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": 16.2,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": 9.5,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": 0.31,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -0.96,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -2.39,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": -4.44,
+     "unit": "pct"
+    },
+    "SMH": {
+     "label": "Semiconductors",
+     "move": 8.6,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": 3.84,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": -1.78,
+     "unit": "pct"
+    },
+    "XLP": {
+     "label": "Consumer staples",
+     "move": -0.76,
+     "unit": "pct"
+    },
+    "NVDA": {
+     "label": "NVDA",
+     "move": 24.37,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "earn-meta-2024-02",
+   "category": "Earnings",
+   "title": "Meta Q4 2023 earnings",
+   "brief": "Reported after the close on Thursday February 1. Meta's quarterly revenue grew about 25% and profit roughly tripled. Its revenue forecast for the next quarter was above estimates. It announced its first-ever dividend and a new $50 billion buyback. (The January jobs report also came out the next morning.)",
+   "focus": "META",
+   "stock": "META",
+   "sectors": [
+    "XLC",
+    "XLK",
+    "XLU",
+    "XLE"
+   ],
+   "explanation": "Strong growth, a better forecast and the first dividend (a sign of a mature, cash-rich company) combined into a huge move: Meta added roughly $200 billion in market value in a day, then a record.",
+   "lesson": "When strong results come with capital returns, a mega-cap can still move like a small stock.",
+   "date": "2024-02-02",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": 1.05,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": 1.69,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": -0.53,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": 16.3,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": 17.0,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": 0.84,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -0.95,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -2.26,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": -0.22,
+     "unit": "pct"
+    },
+    "XLC": {
+     "label": "Communication services",
+     "move": 4.02,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": 1.03,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": -1.8,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": 0.14,
+     "unit": "pct"
+    },
+    "META": {
+     "label": "META",
+     "move": 20.32,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "earn-nvda-2024-08",
+   "category": "Earnings",
+   "title": "Nvidia Q2 FY2025 earnings",
+   "brief": "Reported after the close on Wednesday August 28. Nvidia was the most-watched stock in the market and had beaten estimates by wide margins for over a year. Revenue was about $30 billion, above the roughly $28.7 billion expected. It guided to about $32.5 billion next quarter, slightly above consensus but below the highest estimates, and gross margins dipped.",
+   "focus": "NVDA",
+   "stock": "NVDA",
+   "sectors": [
+    "SMH",
+    "XLK",
+    "XLU",
+    "XLE"
+   ],
+   "explanation": "The results were strong, but the bar was far higher than the official consensus. Investors wanted another huge beat like the ones before, and a modest beat plus slightly lower margins disappointed. The stock fell.",
+   "lesson": "Beating the consensus isn't enough if the \"whisper number\" is higher.",
+   "date": "2024-08-29",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": 0.01,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -0.15,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": 0.71,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": 3.1,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": 2.6,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": 0.25,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": 0.52,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": 1.71,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": -8.53,
+     "unit": "pct"
+    },
+    "SMH": {
+     "label": "Semiconductors",
+     "move": -1.24,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -0.9,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": 0.54,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": 1.3,
+     "unit": "pct"
+    },
+    "NVDA": {
+     "label": "NVDA",
+     "move": -6.38,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "shock-ukraine-2022",
+   "category": "Shock",
+   "title": "Russia invades Ukraine",
+   "brief": "Before dawn on Thursday, Russia launched a full-scale invasion of Ukraine. Brent crude briefly rose above $100 a barrel for the first time since 2014, and US stock futures fell sharply overnight. The Nasdaq was already more than 20% below its high on fears of Fed rate hikes. During the day the US announced new sanctions.",
+   "focus": "spx",
+   "sectors": [
+    "XLE",
+    "XLK",
+    "XLF",
+    "XLU"
+   ],
+   "explanation": "Stocks fell sharply at the open, then reversed and closed higher, led by tech. Much of the fear was already priced in after weeks of warnings, and traders reasoned the war might slow the Fed's hikes. Sanctions avoided targeting Russian energy at first, which helped.",
+   "lesson": "Geopolitical shocks often cause a quick drop that reverses. Ask what is already priced in and what the Fed might do.",
+   "date": "2022-02-24",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": 1.5,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": 3.36,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": 2.62,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": -5.5,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -0.8,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": 0.99,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -0.65,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": 0.15,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": -2.26,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": -0.78,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": 3.42,
+     "unit": "pct"
+    },
+    "XLF": {
+     "label": "Financials",
+     "move": -1.2,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": 0.8,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "shock-svb-2023",
+   "category": "Shock",
+   "title": "Silicon Valley Bank aftermath",
+   "brief": "Monday. Silicon Valley Bank failed on Friday after a run on deposits, and Signature Bank was closed on Sunday. Sunday night, regulators said all depositors at both banks would be protected, and the Fed launched a new lending program for banks. Before SVB failed, markets had been pricing a 0.5-point Fed hike later that month.",
+   "focus": "KRE",
+   "stock": "KRE",
+   "sectors": [
+    "KRE",
+    "XLF",
+    "XLK",
+    "XLU"
+   ],
+   "explanation": "The rescue protected depositors, but investors still feared runs at other regional banks with similar problems (uninsured deposits and losses on bonds). Regional bank stocks crashed even as big banks held up better. Traders bet the Fed would stop hiking, so the 2-year yield had one of its biggest falls in decades, and gold rose as a haven.",
+   "lesson": "In a banking scare, money flees the weakest links and rushes into Treasuries; rate-hike bets can vanish in a day.",
+   "date": "2023-03-13",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -0.14,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": 0.74,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": -1.63,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": -50.6,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -18.0,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": -0.94,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": 2.29,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -2.82,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 6.94,
+     "unit": "pct"
+    },
+    "KRE": {
+     "label": "Regional banks",
+     "move": -12.31,
+     "unit": "pct"
+    },
+    "XLF": {
+     "label": "Financials",
+     "move": -3.95,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": 0.55,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": 1.54,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "shock-carry-2024",
+   "category": "Shock",
+   "title": "Yen carry trade unwind",
+   "brief": "Monday. Friday's weak US jobs report had raised recession fears. The Bank of Japan had unexpectedly raised rates the week before, and the yen was surging. That forced traders who had borrowed cheap yen to buy higher-yielding assets (the \"carry trade\") to sell. Overnight, Japan's Nikkei index fell more than 12%, its worst day since 1987.",
+   "focus": "spx",
+   "sectors": [
+    "SMH",
+    "XLK",
+    "XLU",
+    "XLP"
+   ],
+   "explanation": "Forced selling spread across markets as leveraged positions were unwound. The VIX briefly spiked to its highest level since 2020. Crowded trades like semiconductors fell hardest, while defensive sectors held up better. Within days markets largely recovered, because the selling was driven by positioning, not a change in the economy.",
+   "lesson": "Sell-offs driven by forced selling are violent but often short-lived.",
+   "date": "2024-08-05",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -2.91,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -2.98,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": -3.22,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": 1.3,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -0.7,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": -0.5,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -1.27,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -0.23,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 64.9,
+     "unit": "pct"
+    },
+    "SMH": {
+     "label": "Semiconductors",
+     "move": -2.34,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -3.33,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": -2.64,
+     "unit": "pct"
+    },
+    "XLP": {
+     "label": "Consumer staples",
+     "move": -1.97,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "shock-election-2024",
+   "category": "Shock",
+   "title": "2024 US election result",
+   "brief": "Wednesday. Overnight, Donald Trump won the presidential election, and Republicans won the Senate. His campaign had promised tariffs, tax cuts and lighter regulation. Many analysts had expected a long, uncertain vote count; instead the result was clear by morning.",
+   "focus": "spx",
+   "sectors": [
+    "IWM",
+    "KRE",
+    "XLU",
+    "XLRE"
+   ],
+   "explanation": "Markets priced in faster growth, looser regulation and higher deficits, and the uncertainty cleared quickly. Stocks rose broadly, with small caps and banks leading on hopes for tax cuts and deregulation. Treasury yields and the dollar rose on expectations of bigger deficits, tariffs and fewer Fed cuts. Rate-sensitive utilities and real estate lagged.",
+   "lesson": "Markets trade the expected policy mix (growth, deficits, tariffs), and removing uncertainty is itself a boost.",
+   "date": "2024-11-06",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": 2.49,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": 2.72,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": 5.79,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": 7.8,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": 13.7,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": 1.61,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -3.04,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -0.25,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": -20.6,
+     "unit": "pct"
+    },
+    "KRE": {
+     "label": "Regional banks",
+     "move": 13.41,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": -1.03,
+     "unit": "pct"
+    },
+    "XLRE": {
+     "label": "Real estate",
+     "move": -2.67,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "shock-deepseek-2025",
+   "category": "Shock",
+   "title": "DeepSeek AI model",
+   "brief": "Monday. Over the weekend, attention exploded around DeepSeek, a Chinese AI start-up whose reasoning model matched top US models on several tests. DeepSeek said it had trained an earlier model for under $6 million using less advanced Nvidia chips, a tiny fraction of what US labs spend. Its app hit No. 1 on Apple's US App Store.",
+   "focus": "NVDA",
+   "stock": "NVDA",
+   "sectors": [
+    "SMH",
+    "XLU",
+    "XLP",
+    "XLV"
+   ],
+   "explanation": "If AI could be built far more cheaply, the giant spending on Nvidia chips and data centers might shrink. Nvidia fell about 17%, losing a record ~$590 billion in market value in a day. Chipmakers and power companies tied to AI data centers fell sharply, while defensive sectors rose as money rotated out of AI winners.",
+   "lesson": "A threat to the core assumption behind a crowded trade can hit even the market's biggest company.",
+   "date": "2025-01-27",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -1.41,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -2.91,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": -0.96,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": -7.9,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -9.8,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": -0.09,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -1.04,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -2.1,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 20.54,
+     "unit": "pct"
+    },
+    "SMH": {
+     "label": "Semiconductors",
+     "move": -9.83,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": -2.31,
+     "unit": "pct"
+    },
+    "XLP": {
+     "label": "Consumer staples",
+     "move": 2.71,
+     "unit": "pct"
+    },
+    "XLV": {
+     "label": "Health care",
+     "move": 2.25,
+     "unit": "pct"
+    },
+    "NVDA": {
+     "label": "NVDA",
+     "move": -16.97,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "shock-tariffs-2025-04",
+   "category": "Shock",
+   "title": "April 2025 \"reciprocal\" tariffs",
+   "brief": "Announced after the close on Wednesday April 2. President Trump unveiled \"reciprocal\" tariffs: a 10% minimum on imports from almost every country, and much higher rates on many, including 34% more on China and 20% on the EU. The rates were far higher than most investors expected.",
+   "focus": "spx",
+   "sectors": [
+    "XLK",
+    "XLY",
+    "XLP",
+    "XLU"
+   ],
+   "explanation": "The tariffs were much larger than expected, raising fears of recession plus higher prices. Stocks had their worst day since 2020, led by companies with global supply chains such as Apple and retailers. Unusually, the dollar fell rather than acting as a haven, because investors questioned US policy itself. Oil fell on recession fears, and defensive sectors held up best.",
+   "lesson": "When the shock comes from US policy, the usual havens (the dollar) may not behave as usual.",
+   "date": "2025-04-03",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -4.93,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -5.35,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": -6.42,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": -14.5,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": -14.1,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": -1.68,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": -0.6,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": -7.06,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 39.56,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -6.82,
+     "unit": "pct"
+    },
+    "XLY": {
+     "label": "Consumer discretionary",
+     "move": -6.04,
+     "unit": "pct"
+    },
+    "XLP": {
+     "label": "Consumer staples",
+     "move": 0.58,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": -0.63,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "shock-tariff-pause-2025",
+   "category": "Shock",
+   "title": "90-day tariff pause",
+   "brief": "Wednesday. After four days of heavy losses following the April tariffs, and with the Treasury market showing stress, President Trump announced at about 1:20 ET a 90-day pause on most of the higher reciprocal tariffs, keeping the 10% baseline. Tariffs on China were raised further.",
+   "focus": "spx",
+   "sectors": [
+    "XLK",
+    "SMH",
+    "XLP",
+    "XLU"
+   ],
+   "explanation": "Markets were deeply oversold and heavily hedged. The pause removed the worst-case scenario, so traders rushed to buy back stocks and close bearish bets. The S&P 500 rose more than 9%, one of its best days ever, led by tech and chipmakers. Defensive sectors lagged.",
+   "lesson": "The biggest up days happen in bear markets, when positioning is extreme and a catalyst flips sentiment.",
+   "date": "2025-04-09",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": 10.5,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": 12.0,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": 8.5,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": 24.9,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": 13.8,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": -0.06,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": 3.7,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": 6.69,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": -35.75,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": 13.43,
+     "unit": "pct"
+    },
+    "SMH": {
+     "label": "Semiconductors",
+     "move": 17.16,
+     "unit": "pct"
+    },
+    "XLP": {
+     "label": "Consumer staples",
+     "move": 3.88,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": 3.94,
+     "unit": "pct"
+    }
+   }
+  },
+  {
+   "id": "shock-iran-2025",
+   "category": "Shock",
+   "title": "Israel strikes Iran, June 2025",
+   "brief": "Friday. Overnight, Israel launched airstrikes on Iran's nuclear facilities and military leaders. Iran promised retaliation. Iran is a major oil producer and borders the Strait of Hormuz, through which about a fifth of the world's oil passes. Oil prices jumped overnight.",
+   "focus": "USO",
+   "stock": "USO",
+   "sectors": [
+    "XLE",
+    "XLK",
+    "XLY",
+    "XLU"
+   ],
+   "explanation": "Oil rose sharply on fears of supply disruption, energy and defense stocks rose, and the broad market fell more modestly. Airlines and consumer stocks, which suffer from higher fuel costs, were among the weakest. Oil supply was not actually disrupted, so the move depended on how the conflict escalated next.",
+   "lesson": "For Middle East conflicts, watch oil first; stocks react through energy prices and risk appetite.",
+   "date": "2025-06-13",
+   "moves": {
+    "SPY": {
+     "label": "S&P 500",
+     "move": -1.12,
+     "unit": "pct"
+    },
+    "QQQ": {
+     "label": "Nasdaq 100",
+     "move": -1.26,
+     "unit": "pct"
+    },
+    "IWM": {
+     "label": "Small caps (Russell 2000)",
+     "move": -1.83,
+     "unit": "pct"
+    },
+    "DGS2": {
+     "label": "2-year Treasury yield",
+     "move": 1.4,
+     "unit": "bp"
+    },
+    "DGS10": {
+     "label": "10-year Treasury yield",
+     "move": 6.7,
+     "unit": "bp"
+    },
+    "DX-Y.NYB": {
+     "label": "US dollar (DXY)",
+     "move": 0.27,
+     "unit": "pct"
+    },
+    "GLD": {
+     "label": "Gold",
+     "move": 1.31,
+     "unit": "pct"
+    },
+    "USO": {
+     "label": "Oil",
+     "move": 6.89,
+     "unit": "pct"
+    },
+    "^VIX": {
+     "label": "VIX (fear gauge)",
+     "move": 15.54,
+     "unit": "pct"
+    },
+    "XLE": {
+     "label": "Energy",
+     "move": 1.74,
+     "unit": "pct"
+    },
+    "XLK": {
+     "label": "Technology",
+     "move": -1.4,
+     "unit": "pct"
+    },
+    "XLY": {
+     "label": "Consumer discretionary",
+     "move": -0.92,
+     "unit": "pct"
+    },
+    "XLU": {
+     "label": "Utilities",
+     "move": -0.57,
+     "unit": "pct"
+    }
+   }
+  }
+ ],
+ "sector_names": {
+  "XLK": "Technology",
+  "SMH": "Semiconductors",
+  "XLF": "Financials",
+  "KRE": "Regional banks",
+  "XLE": "Energy",
+  "XLV": "Health care",
+  "XLY": "Consumer discretionary",
+  "XLP": "Consumer staples",
+  "XLI": "Industrials",
+  "XLU": "Utilities",
+  "XLRE": "Real estate",
+  "XHB": "Homebuilders",
+  "XLC": "Communication services",
+  "IWM": "Small caps (Russell 2000)"
+ }
+}
