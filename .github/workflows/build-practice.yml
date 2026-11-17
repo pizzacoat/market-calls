@@ -18,6 +18,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -29,7 +30,8 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Build bank
-        run: python scripts/build_practice_bank.py
+        run: python -u scripts/build_practice_bank.py
+        timeout-minutes: 15
 
       - name: Commit
         run: |

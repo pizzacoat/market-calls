@@ -35,7 +35,7 @@ def _yahoo(ticker: str, start: dt.date, end: dt.date) -> pd.Series:
 
     df = yf.download(ticker, start=start.isoformat(),
                      end=(end + dt.timedelta(days=1)).isoformat(),
-                     auto_adjust=False, progress=False, threads=False)
+                     auto_adjust=False, progress=False, threads=False, timeout=30)
     if df is None or df.empty:
         return pd.Series(dtype=float)
     close = df["Close"]

@@ -1,0 +1,544 @@
+<title>Reaction Desk</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single trading-desk column. Status strip on top, the event "ticket"
+   in the middle, the tape (actual moves) revealed underneath. */
+:root {
+  --bg: #eef1f4;
+  --surface: #ffffff;
+  --ink: #16202b;
+  --muted: #5b6875;
+  --line: #d5dce3;
+  --accent: #1f4fd1;
+  --accent-soft: #e3eafc;
+  --up: #12805c;
+  --up-soft: #dcf2e9;
+  --down: #c2362f;
+  --down-soft: #fbe3e1;
+  --warn: #9a6200;
+  --warn-soft: #fbefd8;
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e141b; --surface: #161e27; --ink: #e6ebf0; --muted: #93a1ae; --line: #2a3541;
+    --accent: #7fa3ff; --accent-soft: #1d2a47; --up: #4cc79a; --up-soft: #12372b;
+    --down: #ff7d74; --down-soft: #431c1a; --warn: #f0b84d; --warn-soft: #3b2c0e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e141b; --surface: #161e27; --ink: #e6ebf0; --muted: #93a1ae; --line: #2a3541;
+  --accent: #7fa3ff; --accent-soft: #1d2a47; --up: #4cc79a; --up-soft: #12372b;
+  --down: #ff7d74; --down-soft: #431c1a; --warn: #f0b84d; --warn-soft: #3b2c0e;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-body);
+  font-size: 15px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 48px;
+}
+.wrap { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; text-wrap: balance; }
+.mono, .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+header h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.01em; }
+header p { margin: 0; color: var(--muted); font-size: 13px; }
+
+.levels { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.lvl {
+  appearance: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  border-radius: 10px; padding: 10px 12px; text-align: left; cursor: pointer; font: inherit;
+  display: flex; flex-direction: column; gap: 6px; min-width: 0;
+}
+.lvl:focus-visible, button:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.lvl[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.lvl[disabled] { cursor: not-allowed; opacity: .55; }
+.lvl .k { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.lvl .t { font-family: var(--font-display); font-weight: 700; font-size: 14px; line-height: 1.25; }
+.bar { height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .4s; }
+.lvl .s { font-size: 12px; color: var(--muted); }
+@media (max-width: 560px) { .levels { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 12px; color: var(--muted); }
+.chip { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.card h2 { font-size: 22px; font-weight: 700; }
+.brief { margin: 0; max-width: 65ch; }
+
+.q { display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--line); padding-top: 14px; }
+.q h3 { font-size: 15px; font-weight: 700; font-family: var(--font-body); }
+.opts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+@media (max-width: 480px) { .opts { grid-template-columns: 1fr; } }
+.opt {
+  appearance: none; border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+  border-radius: 10px; padding: 11px 12px; font: inherit; text-align: left; cursor: pointer;
+  display: flex; align-items: center; gap: 10px; min-width: 0;
+}
+.opt:hover:not([disabled]) { border-color: var(--accent); }
+.opt[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.opt .arrow { font-family: var(--font-mono); font-weight: 500; width: 1.4em; text-align: center; }
+.opt.right { border-color: var(--up); background: var(--up-soft); }
+.opt.wrong { border-color: var(--down); background: var(--down-soft); }
+.opt[disabled] { cursor: default; }
+
+textarea {
+  width: 100%; min-height: 140px; resize: vertical; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--bg); color: var(--ink); font: inherit; padding: 12px;
+}
+.hint { font-size: 13px; color: var(--muted); margin: 0; }
+.err { font-size: 13px; color: var(--down); margin: 0; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn {
+  appearance: none; border: 1px solid var(--accent); background: var(--accent); color: var(--surface);
+  border-radius: 10px; padding: 10px 16px; font: inherit; font-weight: 600; cursor: pointer;
+}
+.btn.ghost { background: transparent; color: var(--accent); }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+
+.result { border-radius: 10px; padding: 12px 14px; font-weight: 600; display: flex; gap: 10px; align-items: center; }
+.result.good { background: var(--up-soft); color: var(--up); }
+.result.bad { background: var(--down-soft); color: var(--down); }
+.result.mid { background: var(--warn-soft); color: var(--warn); }
+
+.tape { width: 100%; border-collapse: collapse; font-size: 14px; }
+.tape-wrap { overflow-x: auto; }
+.tape th { text-align: left; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+.tape td { padding: 7px 8px; border-bottom: 1px solid var(--line); }
+.tape td.num { text-align: right; white-space: nowrap; }
+.tape tr.hl td { background: var(--accent-soft); }
+.pos { color: var(--up); } .neg { color: var(--down); }
+.why h3 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-family: var(--font-body); font-weight: 600; margin-bottom: 4px; }
+.why p { margin: 0; max-width: 65ch; }
+.lesson { border-left: 3px solid var(--accent); padding: 4px 0 4px 12px; font-weight: 600; border-radius: 0; }
+.feedback { white-space: pre-wrap; margin: 0; }
+.scorebig { font-family: var(--font-display); font-size: 34px; font-weight: 800; line-height: 1; }
+
+.live { display: flex; flex-direction: column; gap: 10px; }
+.live ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+footer { font-size: 12px; color: var(--muted); text-align: center; }
+footer a { color: inherit; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Reaction Desk</h1>
+    <p id="stats">Real events, real market moves.</p>
+  </header>
+
+  <nav class="levels" id="levels" aria-label="Levels"></nav>
+
+  <main id="main" class="card" aria-live="polite">
+    <p class="hint">Loading the first event…</p>
+  </main>
+
+  <footer>
+    Moves are measured from the previous close to the close on the reaction day, using Yahoo Finance and FRED data
+    (<a href="https://github.com/pizzacoat/market-calls" target="_blank" rel="noopener">source</a>).
+    Bank updated <span id="gen"></span>.
+  </footer>
+</div>
+
+<script id="bank" type="application/json">/*BANK*/</script>
+<script>
+(() => {
+"use strict";
+const BANK = JSON.parse(document.getElementById("bank").textContent);
+const EVENTS = BANK.events;
+const REPO = "https://github.com/pizzacoat/market-calls";
+
+/* ---------- levels ---------- */
+const LEVELS = [
+  { n: 1, key: "Level 1", name: "Read the reaction", window: 12, pass: 0.75,
+    rule: "75% right over your last 12" },
+  { n: 2, key: "Level 2", name: "Across markets", window: 15, pass: 0.70,
+    rule: "70% right over your last 15" },
+  { n: 3, key: "Level 3", name: "Explain it", window: 6, pass: 7,
+    rule: "Average 7/10 over your last 6" },
+  { n: 4, key: "Level 4", name: "Live calls", window: 0, pass: 0, rule: "" },
+];
+
+/* ---------- size buckets ---------- */
+function thresholdFor(ticker, unit) {
+  if (unit === "bp") return 8;
+  if (ticker === "DX-Y.NYB") return 0.4;
+  if (ticker === "GLD") return 0.8;
+  if (ticker === "USO") return 2.5;
+  if (ticker === "^VIX") return 10;
+  const etfs = ["SPY","QQQ","IWM","XLK","SMH","XLF","KRE","XLE","XLV","XLY","XLP","XLI","XLU","XLRE","XHB","XLB","XLC"];
+  return etfs.includes(ticker) ? 1.0 : 5.0;
+}
+function fmt(move, unit) {
+  const s = move > 0 ? "+" : move < 0 ? "−" : "";
+  const a = Math.abs(move);
+  return unit === "bp" ? `${s}${a.toFixed(0)} bp` : `${s}${a.toFixed(2)}%`;
+}
+function bucketOptions(ticker, unit, label) {
+  const t = thresholdFor(ticker, unit);
+  const u = unit === "bp" ? " bp" : "%";
+  const tt = unit === "bp" ? String(t) : (t % 1 ? t.toFixed(1) : String(t));
+  const verb = unit === "bp" ? ["fell", "rose"] : ["fell", "rose"];
+  return [
+    { id: "dn2", arrow: "▼▼", text: `${cap(verb[0])} more than ${tt}${u}` },
+    { id: "dn1", arrow: "▼", text: `${cap(verb[0])} 0–${tt}${u}` },
+    { id: "up1", arrow: "▲", text: `${cap(verb[1])} 0–${tt}${u}` },
+    { id: "up2", arrow: "▲▲", text: `${cap(verb[1])} more than ${tt}${u}` },
+  ];
+}
+function bucketOf(move, ticker, unit) {
+  const t = thresholdFor(ticker, unit);
+  if (move <= -t) return "dn2";
+  if (move < 0) return "dn1";
+  if (move < t) return "up1";
+  return "up2";
+}
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+
+/* ---------- questions per event ---------- */
+function focusTicker(e) { return e.focus === "spx" ? "SPY" : e.focus; }
+
+function level1Questions(e) {
+  const t = focusTicker(e), m = e.moves[t];
+  if (!m) return [];
+  const name = t === "SPY" ? "the S&P 500" : (m.label === t ? t : `${m.label} (${t})`);
+  return [{ id: "l1", ticker: t, prompt: `How did ${name} close on the day?`,
+            options: bucketOptions(t, m.unit), answer: bucketOf(m.move, t, m.unit) }];
+}
+
+function level2Questions(e) {
+  const qs = [];
+  const y2 = e.moves["DGS2"];
+  if (y2) qs.push({ id: "y2", ticker: "DGS2", prompt: "How did the 2-year Treasury yield move?",
+                    options: bucketOptions("DGS2", "bp"), answer: bucketOf(y2.move, "DGS2", "bp") });
+  // The cross-asset question goes to whichever of dollar / gold / oil moved most for its size.
+  const cands = ["DX-Y.NYB", "GLD", "USO"].filter(t => e.moves[t] && t !== focusTicker(e));
+  cands.sort((a, b) => Math.abs(e.moves[b].move) / thresholdFor(b) - Math.abs(e.moves[a].move) / thresholdFor(a));
+  if (cands.length) {
+    const t = cands[0], m = e.moves[t];
+    const name = { "DX-Y.NYB": "the US dollar (DXY)", GLD: "gold", USO: "oil" }[t];
+    qs.push({ id: "x", ticker: t, prompt: `How did ${name} move?`,
+              options: bucketOptions(t, m.unit), answer: bucketOf(m.move, t, m.unit) });
+  }
+  const secs = (e.sectors || []).filter(t => e.moves[t]);
+  if (secs.length >= 3) {
+    const best = secs.reduce((a, b) => e.moves[b].move > e.moves[a].move ? b : a);
+    qs.push({ id: "best", prompt: "Which of these did best on the day?",
+              options: secs.map(t => ({ id: t, arrow: "•", text: `${BANK.sector_names[t] || t} (${t})` })),
+              answer: best });
+  }
+  return qs;
+}
+
+function questionsFor(e, level) { return level === 1 ? level1Questions(e) : level === 2 ? level2Questions(e) : []; }
+
+/* ---------- state ---------- */
+const STORE_KEY = "reaction-desk-v1";
+let state = { answers: [], written: [], level: 1 };
+let db = null, docRef = null, saving = Promise.resolve();
+
+function loadLocal() { try { const s = localStorage.getItem(STORE_KEY); if (s) state = { ...state, ...JSON.parse(s) }; } catch (_) {} }
+function saveLocal() { try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (_) {} }
+function save() {
+  saveLocal();
+  if (!docRef) return;
+  const snapshot = JSON.parse(JSON.stringify({ ...state, updated: new Date().toISOString() }));
+  saving = saving.then(() => docRef.set(snapshot)).catch(() => {});
+}
+
+async function connect() {
+  try {
+    if (!window.claude?.use) return;
+    const [dbNs, user] = await Promise.all([claude.use("db"), claude.use("user")]);
+    if (!dbNs || !user) return;
+    const id = await user.id();
+    if (!id) return;
+    db = dbNs; docRef = db.doc(`progress/${id}`);
+    const snap = await docRef.get();
+    const remote = snap.exists ? snap.data() : null;
+    if (remote && (remote.answers?.length || 0) + (remote.written?.length || 0) >=
+                  state.answers.length + state.written.length) {
+      state = { answers: [], written: [], level: 1, ...remote };
+      saveLocal(); render();
+    } else if (state.answers.length || state.written.length) {
+      save();
+    }
+  } catch (_) { /* stays local */ }
+}
+
+/* ---------- progress ---------- */
+function recent(level) {
+  const L = LEVELS[level - 1];
+  if (level === 3) return state.written.slice(-L.window);
+  return state.answers.filter(a => a.level === level).slice(-L.window);
+}
+function progress(level) {
+  const L = LEVELS[level - 1];
+  const r = recent(level);
+  if (level === 3) {
+    const avg = r.length ? r.reduce((s, a) => s + a.score, 0) / r.length : 0;
+    return { done: r.length, need: L.window, value: avg, passed: r.length >= L.window && avg >= L.pass,
+             label: r.length ? `${avg.toFixed(1)}/10 avg · ${r.length}/${L.window}` : `0/${L.window} answered` };
+  }
+  const acc = r.length ? r.filter(a => a.correct).length / r.length : 0;
+  return { done: r.length, need: L.window, value: acc, passed: r.length >= L.window && acc >= L.pass,
+           label: r.length ? `${Math.round(acc * 100)}% · ${r.length}/${L.window}` : `0/${L.window} answered` };
+}
+function checkUnlocks() {
+  state.unlocked = state.unlocked || [];
+  for (let n = 2; n <= 4; n++) if (progress(n - 1).passed && !state.unlocked.includes(n)) {
+    state.unlocked.push(n); return n;
+  }
+  return null;
+}
+const isOpen = n => n === 1 || (state.unlocked || []).includes(n);
+
+/* ---------- picking events ---------- */
+let current = null;   // { event, level, picks: {}, submitted, ... }
+function pickEvent(level) {
+  const usable = EVENTS.filter(e => level === 3 ? e.moves[focusTicker(e)] : questionsFor(e, level).length);
+  const seen = new Set(level === 3 ? state.written.map(w => w.eid)
+                                   : state.answers.filter(a => a.level === level).map(a => a.eid));
+  let pool = usable.filter(e => !seen.has(e.id));
+  if (!pool.length) {
+    // Everything seen: replay the ones you got wrong first, then everything.
+    const missed = new Set(level === 3 ? state.written.filter(w => w.score < 7).map(w => w.eid)
+                                       : state.answers.filter(a => a.level === level && !a.correct).map(a => a.eid));
+    pool = usable.filter(e => missed.has(e.id) && e.id !== current?.event.id);
+    if (!pool.length) pool = usable.filter(e => e.id !== current?.event.id);
+  }
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+
+/* ---------- rendering ---------- */
+const $ = id => document.getElementById(id);
+const el = (tag, attrs = {}, ...kids) => {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v; else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+    else if (v === true) n.setAttribute(k, ""); else if (v !== false && v != null) n.setAttribute(k, v);
+  }
+  for (const k of kids.flat()) if (k != null && k !== false) n.append(k.nodeType ? k : String(k));
+  return n;
+};
+const dateText = iso => new Date(iso + "T12:00:00").toLocaleDateString("en-US", { weekday: "short", year: "numeric", month: "short", day: "numeric" });
+
+function renderLevels() {
+  const nav = $("levels"); nav.replaceChildren();
+  for (const L of LEVELS) {
+    const open = isOpen(L.n);
+    const p = L.n < 4 ? progress(L.n) : null;
+    const pct = p ? Math.min(1, L.n === 3 ? (p.done / p.need) * Math.min(1, p.value / L.pass)
+                                         : (p.done / p.need) * Math.min(1, p.value / L.pass)) : (open ? 1 : 0);
+    nav.append(el("button", { class: "lvl", "aria-pressed": String(state.level === L.n), disabled: !open,
+                 title: open ? "" : `Unlocks when you pass ${LEVELS[L.n - 2].key}: ${LEVELS[L.n - 2].rule}`,
+                 onclick: () => { state.level = L.n; save(); next(); } },
+      el("span", { class: "k" }, L.key, open ? "" : " · locked"),
+      el("span", { class: "t" }, L.name),
+      el("span", { class: "bar" }, el("i", { style: `width:${Math.round(pct * 100)}%` })),
+      el("span", { class: "s" }, p ? (p.passed ? "Passed · " + p.label : p.label) : (open ? "Unlocked" : "Pass Level 3"))));
+  }
+  const total = state.answers.length;
+  const right = state.answers.filter(a => a.correct).length;
+  $("stats").textContent = total ? `${right}/${total} multiple-choice right · ${state.written.length} written` : "Real events, real market moves.";
+  $("gen").textContent = BANK.generated;
+}
+
+function render() {
+  renderLevels();
+  const main = $("main"); main.replaceChildren();
+  if (state.level === 4) return renderLive(main);
+  if (!current) return;
+  const e = current.event;
+  main.append(
+    el("div", { class: "meta" }, el("span", { class: "chip" }, e.category), el("span", { class: "mono" }, dateText(e.date))),
+    el("h2", {}, e.title),
+    el("p", { class: "brief" }, e.brief));
+  if (current.level === 3) return renderWritten(main);
+
+  current.qs.forEach(q => {
+    const box = el("div", { class: "q" }, el("h3", {}, q.prompt));
+    const grid = el("div", { class: "opts", role: "group", "aria-label": q.prompt });
+    q.options.forEach(o => {
+      const picked = current.picks[q.id] === o.id;
+      let cls = "opt";
+      if (current.submitted) cls += o.id === q.answer ? " right" : picked ? " wrong" : "";
+      grid.append(el("button", { class: cls, "aria-pressed": String(picked), disabled: current.submitted,
+        onclick: () => { current.picks[q.id] = o.id; render(); } },
+        el("span", { class: "arrow", "aria-hidden": "true" }, o.arrow), el("span", {}, o.text)));
+    });
+    box.append(grid);
+    main.append(box);
+  });
+
+  const all = current.qs.every(q => current.picks[q.id]);
+  if (!current.submitted) {
+    main.append(el("div", { class: "actions" },
+      el("button", { class: "btn", disabled: !all, onclick: submitMcq }, "Check answer"),
+      all ? null : el("span", { class: "hint" }, current.qs.length > 1 ? "Answer every question to check." : "Pick an answer.")));
+  } else {
+    const n = current.qs.filter(q => current.picks[q.id] === q.answer).length;
+    const good = n === current.qs.length;
+    main.append(el("div", { class: `result ${good ? "good" : n ? "mid" : "bad"}` },
+      good ? "Right." : n ? `${n} of ${current.qs.length} right.` : "Not this time."));
+    renderReveal(main);
+  }
+}
+
+function renderReveal(main) {
+  const e = current.event;
+  const order = ["SPY", "QQQ", "IWM", "DGS2", "DGS10", "DX-Y.NYB", "GLD", "USO", "^VIX"];
+  const extra = [...(e.sectors || []), e.stock].filter(t => t && !order.includes(t));
+  const rows = [...order, ...new Set(extra)].filter(t => e.moves[t]);
+  const asked = new Set(current.qs?.map(q => q.ticker).filter(Boolean) || [focusTicker(e)]);
+  const table = el("table", { class: "tape" },
+    el("thead", {}, el("tr", {}, el("th", {}, "What happened"), el("th", { style: "text-align:right" }, "Move"))),
+    el("tbody", {}, rows.map(t => {
+      const m = e.moves[t];
+      return el("tr", { class: asked.has(t) ? "hl" : "" },
+        el("td", {}, m.label === t ? t : m.label),
+        el("td", { class: `num ${m.move > 0 ? "pos" : m.move < 0 ? "neg" : ""}` }, fmt(m.move, m.unit)));
+    })));
+  main.append(
+    el("div", { class: "tape-wrap" }, table),
+    el("div", { class: "why" }, el("h3", {}, "Why"), el("p", {}, e.explanation)),
+    el("p", { class: "lesson" }, e.lesson),
+    el("div", { class: "actions" }, el("button", { class: "btn", onclick: next }, "Next event →")));
+}
+
+function renderWritten(main) {
+  const box = el("div", { class: "q" },
+    el("h3", {}, "How did markets react, and why?"),
+    el("p", { class: "hint" }, "Cover the S&P 500 (or the stock), the 2-year yield, the dollar or gold or oil, and which sectors led or lagged. Give the direction, a rough size, and your reasoning."));
+  if (!current.graded) {
+    const ta = el("textarea", { id: "answer", "aria-label": "Your answer", placeholder: "Stocks fell about 2%, led by tech, because…" });
+    ta.value = current.draft || "";
+    ta.addEventListener("input", () => { current.draft = ta.value; if (current.error) { current.error = ""; errEl.textContent = ""; } });
+    const errEl = el("p", { class: "err", role: "alert" }, current.error || "");
+    const btn = el("button", { class: "btn", disabled: current.busy, onclick: gradeWritten }, current.busy ? "Grading…" : "Submit for grading");
+    box.append(ta, errEl, el("div", { class: "actions" }, btn,
+      el("button", { class: "btn ghost", disabled: current.busy, onclick: () => { current.graded = { skipped: true }; render(); } }, "Show the answer")));
+    main.append(box);
+    return;
+  }
+  box.append(el("p", { class: "feedback" }, current.draft || ""));
+  main.append(box);
+  const g = current.graded;
+  if (!g.skipped) {
+    const cls = g.score >= 7 ? "good" : g.score >= 4 ? "mid" : "bad";
+    main.append(el("div", { class: `result ${cls}` }, el("span", { class: "scorebig" }, `${g.score}/10`), el("span", {}, g.verdict || "")),
+      el("div", { class: "why" }, el("h3", {}, "Feedback"), el("p", { class: "feedback" }, g.feedback || "")));
+    if (g.missed) main.append(el("div", { class: "why" }, el("h3", {}, "What you missed"), el("p", { class: "feedback" }, g.missed)));
+  }
+  current.qs = [{ ticker: focusTicker(current.event) }];
+  renderReveal(main);
+}
+
+function renderLive(main) {
+  main.append(
+    el("div", { class: "meta" }, el("span", { class: "chip" }, "Level 4")),
+    el("h2", {}, "Live calls"),
+    el("div", { class: "live" },
+      el("p", { class: "brief" }, "You've passed the practice levels. Now make calls on real upcoming events before they happen, and let the journal grade them."),
+      el("ol", {},
+        el("li", {}, "Every Sunday, check the Week ahead issue for the coming releases and earnings."),
+        el("li", {}, "Before an event, log your call with the New call form. Make the call before you ask Claude."),
+        el("li", {}, "After the close, the results are posted on your issue and your scorecard updates.")),
+      el("div", { class: "actions" },
+        el("a", { class: "btn", href: `${REPO}/issues/new?template=new-call.yml`, target: "_blank", rel: "noopener" }, "Log a new call"),
+        el("a", { class: "btn ghost", href: REPO, target: "_blank", rel: "noopener" }, "Open the scorecard"))));
+}
+
+/* ---------- actions ---------- */
+function next() {
+  const level = state.level;
+  if (level === 4) { current = null; render(); return; }
+  const e = pickEvent(level);
+  current = e ? { event: e, level, qs: questionsFor(e, level), picks: {}, submitted: false } : null;
+  render();
+  try { window.scrollTo({ top: 0, behavior: "smooth" }); } catch (_) {}
+}
+
+function submitMcq() {
+  current.submitted = true;
+  const ts = new Date().toISOString();
+  for (const q of current.qs) {
+    state.answers.push({ eid: current.event.id, level: current.level, q: q.id,
+                         pick: current.picks[q.id], answer: q.answer, correct: current.picks[q.id] === q.answer, ts });
+  }
+  const opened = checkUnlocks();
+  save(); render();
+  if (opened) announce(`${LEVELS[opened - 1].key} unlocked: ${LEVELS[opened - 1].name}.`);
+}
+
+function announce(msg) {
+  const n = el("div", { class: "result good", role: "status" }, msg);
+  $("main").prepend(n);
+}
+
+let sampleFn = null;
+async function gradeWritten() {
+  const text = (current.draft || "").trim();
+  if (text.length < 40) { current.error = "Write at least a couple of sentences: direction, rough size and why."; render(); return; }
+  if (!sampleFn) sampleFn = window.claude?.use ? await claude.use("sample") : null;
+  if (!sampleFn) { current.error = "Grading by Claude isn't available here. Open this page on claude.ai, or use \"Show the answer\"."; render(); return; }
+  current.busy = true; current.error = ""; render();
+  const e = current.event;
+  const tape = Object.entries(e.moves).map(([t, m]) => `${m.label}: ${fmt(m.move, m.unit)}`).join("\n");
+  const prompt =
+`You are grading a finance student's prediction of how markets reacted to a historical event. Be fair but demanding, like a trading desk mentor. Judge only against the actual data given.
+
+EVENT (${e.date}): ${e.title}
+What was known beforehand: ${e.brief}
+
+ACTUAL MOVES (previous close to close that day):
+${tape}
+
+WHY IT HAPPENED: ${e.explanation}
+
+STUDENT'S ANSWER:
+"""${text.slice(0, 4000)}"""
+
+Score 0-10: 4 points for directions (main index or stock, yields, dollar/gold/oil, sectors), 2 for rough sizes, 4 for reasoning (the mechanism: surprise vs expectations, rates, positioning, sector exposure). Don't reward vague hedging.
+Reply with only JSON: {"score": <integer 0-10>, "verdict": "<one short sentence>", "feedback": "<2-4 sentences on what they got right and wrong, citing the actual moves>", "missed": "<1-2 sentences on the key idea they missed, or empty string>"}`;
+  try {
+    const r = await sampleFn.json(prompt, { cache: false });
+    const score = Math.max(0, Math.min(10, Math.round(Number(r?.score))));
+    if (!Number.isFinite(score)) throw { code: "invalid_json" };
+    current.graded = { score, verdict: String(r.verdict || ""), feedback: String(r.feedback || ""), missed: String(r.missed || "") };
+    state.written.push({ eid: e.id, score, ts: new Date().toISOString() });
+    const opened = checkUnlocks();
+    save();
+    current.busy = false; render();
+    if (opened) announce(`${LEVELS[opened - 1].key} unlocked: ${LEVELS[opened - 1].name}.`);
+  } catch (err) {
+    current.busy = false;
+    const code = err?.code;
+    current.error = code === "not_granted" || code === "sampling_disabled"
+      ? "Claude isn't allowed to grade on this page. You can still use \"Show the answer\"."
+      : code === "rate_limited" ? "Too many grading requests right now. Wait a minute, then submit again."
+      : code === "invalid_json" ? "The grade came back garbled. Submit again."
+      : "Grading failed. Submit again in a moment.";
+    render();
+  }
+}
+
+/* ---------- boot ---------- */
+loadLocal();
+if (!isOpen(state.level)) state.level = 1;
+next();
+connect();
+})();
+</script>

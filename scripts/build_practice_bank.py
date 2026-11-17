@@ -47,11 +47,15 @@ def main() -> None:
     for e in events:
         for t in e.get("sectors", []) + ([e["stock"]] if e.get("stock") else []):
             wanted.setdefault(t, ("yahoo", "pct"))
+    import time
     for t, (src, _) in wanted.items():
+        t0 = time.time()
         try:
-            md.series(src, t, *span)
+            n = len(md.series(src, t, *span))
         except Exception as ex:
+            n = f"error {ex}"
             problems.append(f"prefetch {t}: {ex}")
+        print(f"fetched {t:10s} {src:5s} rows={n} in {time.time() - t0:.1f}s", flush=True)
 
     for e in events:
         day = parse_date(e["date"])
