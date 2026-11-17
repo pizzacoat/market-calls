@@ -1,0 +1,43 @@
+name: Build practice bank
+
+# Computes real market moves for practice/events.yaml -> practice/bank.json
+on:
+  push:
+    paths:
+      - practice/events.yaml
+      - scripts/build_practice_bank.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: journal-writes
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Build bank
+        run: python scripts/build_practice_bank.py
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add practice/bank.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update practice bank"
+            git pull --rebase
+            git push
+          fi
