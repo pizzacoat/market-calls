@@ -15,7 +15,7 @@ from journal.core import ROOT, load_yaml, parse_date  # noqa: E402
 from journal.data import MarketData, day_move  # noqa: E402
 
 MARKETS = {
-    "SPY": ("S&P 500", "yahoo", "pct"),
+    "SPY": ("S&P 500 (SPY)", "yahoo", "pct"),
     "QQQ": ("Nasdaq 100", "yahoo", "pct"),
     "IWM": ("Small caps (Russell 2000)", "yahoo", "pct"),
     "DGS2": ("2-year Treasury yield", "fred", "bp"),

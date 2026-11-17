@@ -435,10 +435,11 @@ events:
     focus: spx
     sectors: [SMH, XLK, XLU, XLP]
     explanation: >-
-      Forced selling spread across markets as leveraged positions were unwound. The VIX briefly
-      spiked to its highest level since 2020. Crowded trades like semiconductors fell hardest,
-      while defensive sectors held up better. Within days markets largely recovered, because the
-      selling was driven by positioning, not a change in the economy.
+      Forced selling spread across markets as leveraged positions were unwound, and the VIX
+      briefly spiked to its highest level since 2020. Crowded tech trades fell hard, but almost
+      nothing was spared: even utilities and staples fell, because forced sellers sell whatever
+      they can. Within days markets largely recovered, because the selling was driven by
+      positioning, not a change in the economy.
     lesson: Sell-offs driven by forced selling are violent but often short-lived.
 
   - id: shock-election-2024
@@ -526,7 +527,7 @@ events:
     sectors: [XLE, XLK, XLY, XLU]
     explanation: >-
       Oil rose sharply on fears of supply disruption, energy and defense stocks rose, and the
-      broad market fell more modestly. Airlines and consumer stocks, which suffer from higher fuel
-      costs, were among the weakest. Oil supply was not actually disrupted, so the move depended on
-      how the conflict escalated next.
+      broad market fell more modestly as investors cut risk. Airlines, which suffer from higher
+      fuel costs, were among the weakest stocks. Oil supply was not actually disrupted, so the
+      move depended on how the conflict escalated next.
     lesson: For Middle East conflicts, watch oil first; stocks react through energy prices and risk appetite.
