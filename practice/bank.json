@@ -18,7 +18,7 @@
    "date": "2022-09-13",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -4.35,
      "unit": "pct"
     },
@@ -101,7 +101,7 @@
    "date": "2022-11-10",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": 5.5,
      "unit": "pct"
     },
@@ -184,7 +184,7 @@
    "date": "2024-04-10",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -1.0,
      "unit": "pct"
     },
@@ -262,7 +262,7 @@
    "date": "2024-05-15",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": 1.24,
      "unit": "pct"
     },
@@ -345,7 +345,7 @@
    "date": "2024-07-11",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -0.86,
      "unit": "pct"
     },
@@ -423,7 +423,7 @@
    "date": "2023-02-03",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -1.06,
      "unit": "pct"
     },
@@ -506,7 +506,7 @@
    "date": "2024-08-02",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -1.86,
      "unit": "pct"
     },
@@ -584,7 +584,7 @@
    "date": "2024-10-04",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": 0.91,
      "unit": "pct"
     },
@@ -667,7 +667,7 @@
    "date": "2025-08-01",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -1.64,
      "unit": "pct"
     },
@@ -750,7 +750,7 @@
    "date": "2022-06-15",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": 1.43,
      "unit": "pct"
     },
@@ -833,7 +833,7 @@
    "date": "2022-08-26",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -3.38,
      "unit": "pct"
     },
@@ -916,7 +916,7 @@
    "date": "2023-12-13",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": 1.38,
      "unit": "pct"
     },
@@ -994,7 +994,7 @@
    "date": "2024-09-18",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -0.3,
      "unit": "pct"
     },
@@ -1072,7 +1072,7 @@
    "date": "2024-12-18",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -2.98,
      "unit": "pct"
     },
@@ -1151,7 +1151,7 @@
    "date": "2022-04-20",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -0.07,
      "unit": "pct"
     },
@@ -1240,7 +1240,7 @@
    "date": "2022-05-18",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -4.03,
      "unit": "pct"
     },
@@ -1329,7 +1329,7 @@
    "date": "2022-10-27",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -0.53,
      "unit": "pct"
     },
@@ -1418,7 +1418,7 @@
    "date": "2023-02-02",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": 1.46,
      "unit": "pct"
     },
@@ -1507,7 +1507,7 @@
    "date": "2023-05-25",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": 0.87,
      "unit": "pct"
     },
@@ -1596,7 +1596,7 @@
    "date": "2024-02-02",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": 1.05,
      "unit": "pct"
     },
@@ -1685,7 +1685,7 @@
    "date": "2024-08-29",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": 0.01,
      "unit": "pct"
     },
@@ -1773,7 +1773,7 @@
    "date": "2022-02-24",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": 1.5,
      "unit": "pct"
     },
@@ -1857,7 +1857,7 @@
    "date": "2023-03-13",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -0.14,
      "unit": "pct"
     },
@@ -1935,12 +1935,12 @@
     "XLU",
     "XLP"
    ],
-   "explanation": "Forced selling spread across markets as leveraged positions were unwound. The VIX briefly spiked to its highest level since 2020. Crowded trades like semiconductors fell hardest, while defensive sectors held up better. Within days markets largely recovered, because the selling was driven by positioning, not a change in the economy.",
+   "explanation": "Forced selling spread across markets as leveraged positions were unwound, and the VIX briefly spiked to its highest level since 2020. Crowded tech trades fell hard, but almost nothing was spared: even utilities and staples fell, because forced sellers sell whatever they can. Within days markets largely recovered, because the selling was driven by positioning, not a change in the economy.",
    "lesson": "Sell-offs driven by forced selling are violent but often short-lived.",
    "date": "2024-08-05",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -2.91,
      "unit": "pct"
     },
@@ -2023,7 +2023,7 @@
    "date": "2024-11-06",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": 2.49,
      "unit": "pct"
     },
@@ -2102,7 +2102,7 @@
    "date": "2025-01-27",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -1.41,
      "unit": "pct"
     },
@@ -2190,7 +2190,7 @@
    "date": "2025-04-03",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -4.93,
      "unit": "pct"
     },
@@ -2273,7 +2273,7 @@
    "date": "2025-04-09",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": 10.5,
      "unit": "pct"
     },
@@ -2352,12 +2352,12 @@
     "XLY",
     "XLU"
    ],
-   "explanation": "Oil rose sharply on fears of supply disruption, energy and defense stocks rose, and the broad market fell more modestly. Airlines and consumer stocks, which suffer from higher fuel costs, were among the weakest. Oil supply was not actually disrupted, so the move depended on how the conflict escalated next.",
+   "explanation": "Oil rose sharply on fears of supply disruption, energy and defense stocks rose, and the broad market fell more modestly as investors cut risk. Airlines, which suffer from higher fuel costs, were among the weakest stocks. Oil supply was not actually disrupted, so the move depended on how the conflict escalated next.",
    "lesson": "For Middle East conflicts, watch oil first; stocks react through energy prices and risk appetite.",
    "date": "2025-06-13",
    "moves": {
     "SPY": {
-     "label": "S&P 500",
+     "label": "S&P 500 (SPY)",
      "move": -1.12,
      "unit": "pct"
     },
