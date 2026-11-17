@@ -33,7 +33,7 @@ Each prediction scores **1** if the direction and size are both right, **0.5** i
 ## Scorecard
 
 <!-- SCORECARD:START -->
-_No graded calls yet._
+_No graded calls yet. Log your first call from the **Issues → New issue → New call** form._
 <!-- SCORECARD:END -->
 
 ## Repo layout
