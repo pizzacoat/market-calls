@@ -1,11 +1,17 @@
-"""Market data: daily closes from Yahoo Finance and Treasury yields from FRED."""
+"""Market data: daily closes from Yahoo Finance; Treasury yields from FRED,
+falling back to Yahoo's yield tickers when FRED can't be reached (FRED often
+times out from GitHub's servers)."""
 from __future__ import annotations
 
 import datetime as dt
 import io
+import sys
 import urllib.request
 
 import pandas as pd
+
+# Yahoo equivalents of the FRED yield series, quoted in percent.
+YAHOO_YIELDS = {"DGS10": "^TNX", "DGS2": "2YY=F", "DGS5": "^FVX", "DGS30": "^TYX"}
 
 
 class MarketData:
@@ -13,6 +19,7 @@ class MarketData:
 
     def __init__(self):
         self._cache: dict[tuple[str, str], pd.Series] = {}
+        self._fred_down = False
 
     def series(self, source: str, ticker: str, start: dt.date, end: dt.date) -> pd.Series:
         key = (source, ticker)
@@ -20,13 +27,31 @@ class MarketData:
         if s is not None and s.empty:
             return s  # already tried; don't hammer the source again
         if s is None or s.index.min().date() > start or s.index.max().date() < end:
-            s = self._fetch(source, ticker, start, end)
+            try:
+                s = self._fetch(source, ticker, start, end)
+            except Exception as e:
+                print(f"warning: no data for {ticker}: {e}", file=sys.stderr)
+                s = pd.Series(dtype=float)
             self._cache[key] = s
         return s
 
     def _fetch(self, source: str, ticker: str, start: dt.date, end: dt.date) -> pd.Series:
         if source == "fred":
-            return _fred(ticker, start, end)
+            if not self._fred_down:
+                try:
+                    s = _fred(ticker, start, end)
+                    if not s.empty and s.index.max().date() >= min(end, dt.date.today() - dt.timedelta(days=3)):
+                        return s
+                except Exception as e:
+                    print(f"warning: FRED unavailable ({e}); using Yahoo yields", file=sys.stderr)
+                    self._fred_down = True
+            alt = YAHOO_YIELDS.get(ticker)
+            if not alt:
+                return pd.Series(dtype=float)
+            s = _yahoo(alt, start, end)
+            if not s.empty and s.median() > 20:  # some feeds quote yield x10
+                s = s / 10
+            return s
         return _yahoo(ticker, start, end)
 
 
@@ -49,7 +74,7 @@ def _fred(series_id: str, start: dt.date, end: dt.date) -> pd.Series:
     url = ("https://fred.stlouisfed.org/graph/fredgraph.csv"
            f"?id={series_id}&cosd={start.isoformat()}&coed={end.isoformat()}")
     req = urllib.request.Request(url, headers={"User-Agent": "market-calls-journal"})
-    with urllib.request.urlopen(req, timeout=30) as r:
+    with urllib.request.urlopen(req, timeout=10) as r:
         raw = r.read().decode()
     df = pd.read_csv(io.StringIO(raw))
     date_col = "observation_date" if "observation_date" in df.columns else df.columns[0]
