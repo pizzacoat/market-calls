@@ -40,6 +40,19 @@ def main() -> None:
     md = MarketData()
     out, problems = [], []
 
+    # Fetch each series once for the whole span, so every event reads from cache.
+    days = [parse_date(e["date"]) for e in events]
+    span = (min(days) - dt.timedelta(days=14), max(days) + dt.timedelta(days=5))
+    wanted = {t: (src, unit) for t, (_, src, unit) in MARKETS.items()}
+    for e in events:
+        for t in e.get("sectors", []) + ([e["stock"]] if e.get("stock") else []):
+            wanted.setdefault(t, ("yahoo", "pct"))
+    for t, (src, _) in wanted.items():
+        try:
+            md.series(src, t, *span)
+        except Exception as ex:
+            problems.append(f"prefetch {t}: {ex}")
+
     for e in events:
         day = parse_date(e["date"])
         start, end = day - dt.timedelta(days=14), day + dt.timedelta(days=5)

@@ -17,6 +17,8 @@ class MarketData:
     def series(self, source: str, ticker: str, start: dt.date, end: dt.date) -> pd.Series:
         key = (source, ticker)
         s = self._cache.get(key)
+        if s is not None and s.empty:
+            return s  # already tried; don't hammer the source again
         if s is None or s.index.min().date() > start or s.index.max().date() < end:
             s = self._fetch(source, ticker, start, end)
             self._cache[key] = s
