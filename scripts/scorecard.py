@@ -77,6 +77,8 @@ def chart(df: pd.DataFrame) -> None:
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
+    if df.empty:
+        return
     df = df[df["on_time"] != False]  # noqa: E712
     if df.empty:
         return

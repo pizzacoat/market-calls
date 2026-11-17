@@ -244,6 +244,11 @@ def test_end_to_end(sandbox, monkeypatch, capsys):
     assert len(pd.read_csv(sandbox / "results" / "scorecard.csv")) == 5
 
 
+def test_scorecard_with_no_calls(sandbox, capsys):
+    scorecard.main()
+    assert "No graded calls yet" in (sandbox / "README.md").read_text()
+
+
 def test_week_ahead_lists_cpi_week():
     text = week_ahead.build(dt.date(2026, 12, 6), with_earnings=False)
     assert "Dec 7 – Dec 11" in text
